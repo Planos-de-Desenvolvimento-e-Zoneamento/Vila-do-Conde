@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="css/L.Control.Locate.min.css">
         <link rel="stylesheet" href="css/qgis2web.css">
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
-        <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
+        <link rel="stylesheet" href="css/leaflet.photon.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
         html, body, #map {
@@ -37,7 +37,7 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
+        <script src="js/leaflet.photon.js"></script>
         <script src="js/leaflet-measure.js"></script>
         <script src="data/FundeadourosLongoPrazo_1.js"></script>
         <script src="data/FundeadourosMdioPrazo_2.js"></script>
@@ -117,7 +117,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-1.5728150399354026,-48.77474003653916],[-1.5333114023355952,-48.70652790812994]]);
+        }).fitBounds([[-1.5682835768774583,-48.775823623465605],[-1.5287799392776509,-48.70666879944884]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -218,15 +218,15 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Número de Identificação </th>\
-                        <td class="visible-with-data" id="N_Ident">' + (feature.properties['N_Ident'] !== null ? autolinker.link(feature.properties['N_Ident'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="N_Ident">' + (feature.properties['N_Ident'] !== null ? autolinker.link(String(feature.properties['N_Ident']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Calado (m) </th>\
-                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(feature.properties['Calado'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(String(feature.properties['Calado']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Função</th>\
-                        <td class="visible-with-data" id="Funcao">' + (feature.properties['Funcao'] !== null ? autolinker.link(feature.properties['Funcao'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Funcao">' + (feature.properties['Funcao'] !== null ? autolinker.link(String(feature.properties['Funcao']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -280,15 +280,15 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Número de Identificação </th>\
-                        <td class="visible-with-data" id="N_Ident">' + (feature.properties['N_Ident'] !== null ? autolinker.link(feature.properties['N_Ident'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="N_Ident">' + (feature.properties['N_Ident'] !== null ? autolinker.link(String(feature.properties['N_Ident']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Calado (m) </th>\
-                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(feature.properties['Calado'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(String(feature.properties['Calado']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Função</th>\
-                        <td class="visible-with-data" id="Funcao">' + (feature.properties['Funcao'] !== null ? autolinker.link(feature.properties['Funcao'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Funcao">' + (feature.properties['Funcao'] !== null ? autolinker.link(String(feature.properties['Funcao']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -342,15 +342,15 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Número de Identificação </th>\
-                        <td class="visible-with-data" id="N_Ident">' + (feature.properties['N_Ident'] !== null ? autolinker.link(feature.properties['N_Ident'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="N_Ident">' + (feature.properties['N_Ident'] !== null ? autolinker.link(String(feature.properties['N_Ident']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Calado (m) </th>\
-                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(feature.properties['Calado'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(String(feature.properties['Calado']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Função</th>\
-                        <td class="visible-with-data" id="Funcao">' + (feature.properties['Funcao'] !== null ? autolinker.link(feature.properties['Funcao'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Funcao">' + (feature.properties['Funcao'] !== null ? autolinker.link(String(feature.properties['Funcao']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -404,15 +404,15 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Número de Identificação </th>\
-                        <td class="visible-with-data" id="N_Ident">' + (feature.properties['N_Ident'] !== null ? autolinker.link(feature.properties['N_Ident'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="N_Ident">' + (feature.properties['N_Ident'] !== null ? autolinker.link(String(feature.properties['N_Ident']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Calado (m) </th>\
-                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(feature.properties['Calado'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(String(feature.properties['Calado']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Função</th>\
-                        <td class="visible-with-data" id="Funcao">' + (feature.properties['Funcao'] !== null ? autolinker.link(feature.properties['Funcao'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Funcao">' + (feature.properties['Funcao'] !== null ? autolinker.link(String(feature.properties['Funcao']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -466,11 +466,11 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Trecho</th>\
-                        <td class="visible-with-data" id="Trecho">' + (feature.properties['Trecho'] !== null ? autolinker.link(feature.properties['Trecho'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Trecho">' + (feature.properties['Trecho'] !== null ? autolinker.link(String(feature.properties['Trecho']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Calado (m) </th>\
-                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(feature.properties['Calado'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(String(feature.properties['Calado']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -522,11 +522,11 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Trecho</th>\
-                        <td class="visible-with-data" id="Trecho">' + (feature.properties['Trecho'] !== null ? autolinker.link(feature.properties['Trecho'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Trecho">' + (feature.properties['Trecho'] !== null ? autolinker.link(String(feature.properties['Trecho']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Calado (m) </th>\
-                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(feature.properties['Calado'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(String(feature.properties['Calado']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -578,11 +578,11 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Trecho</th>\
-                        <td class="visible-with-data" id="Trecho">' + (feature.properties['Trecho'] !== null ? autolinker.link(feature.properties['Trecho'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Trecho">' + (feature.properties['Trecho'] !== null ? autolinker.link(String(feature.properties['Trecho']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Calado (m) </th>\
-                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(feature.properties['Calado'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(String(feature.properties['Calado']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -634,11 +634,11 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Trecho</th>\
-                        <td class="visible-with-data" id="Trecho">' + (feature.properties['Trecho'] !== null ? autolinker.link(feature.properties['Trecho'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Trecho">' + (feature.properties['Trecho'] !== null ? autolinker.link(String(feature.properties['Trecho']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Calado (m) </th>\
-                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(feature.properties['Calado'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(String(feature.properties['Calado']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -690,15 +690,15 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Calado (m) </th>\
-                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(feature.properties['Calado'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(String(feature.properties['Calado']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Atualização</th>\
-                        <td class="visible-with-data" id="Atualiz">' + (feature.properties['Atualiz'] !== null ? autolinker.link(feature.properties['Atualiz'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Atualiz">' + (feature.properties['Atualiz'] !== null ? autolinker.link(String(feature.properties['Atualiz']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -750,11 +750,11 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Operador</th>\
-                        <td class="visible-with-data" id="Operador">' + (feature.properties['Operador'] !== null ? autolinker.link(feature.properties['Operador'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Operador">' + (feature.properties['Operador'] !== null ? autolinker.link(String(feature.properties['Operador']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -806,11 +806,11 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Identificação </th>\
-                        <td class="visible-with-data" id="Ident">' + (feature.properties['Ident'] !== null ? autolinker.link(feature.properties['Ident'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Ident">' + (feature.properties['Ident'] !== null ? autolinker.link(String(feature.properties['Ident']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Número de Pistas de Rolamento </th>\
-                        <td class="visible-with-data" id="N_Pistas">' + (feature.properties['N_Pistas'] !== null ? autolinker.link(feature.properties['N_Pistas'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="N_Pistas">' + (feature.properties['N_Pistas'] !== null ? autolinker.link(String(feature.properties['N_Pistas']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -862,11 +862,11 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Identificação </th>\
-                        <td class="visible-with-data" id="Ident">' + (feature.properties['Ident'] !== null ? autolinker.link(feature.properties['Ident'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Ident">' + (feature.properties['Ident'] !== null ? autolinker.link(String(feature.properties['Ident']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Número de Pistas de Rolamento </th>\
-                        <td class="visible-with-data" id="N_Pistas">' + (feature.properties['N_Pistas'] !== null ? autolinker.link(feature.properties['N_Pistas'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="N_Pistas">' + (feature.properties['N_Pistas'] !== null ? autolinker.link(String(feature.properties['N_Pistas']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -918,11 +918,11 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Identificação </th>\
-                        <td class="visible-with-data" id="Ident">' + (feature.properties['Ident'] !== null ? autolinker.link(feature.properties['Ident'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Ident">' + (feature.properties['Ident'] !== null ? autolinker.link(String(feature.properties['Ident']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Número de Pistas de Rolamento </th>\
-                        <td class="visible-with-data" id="N_Pista">' + (feature.properties['N_Pista'] !== null ? autolinker.link(feature.properties['N_Pista'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="N_Pista">' + (feature.properties['N_Pista'] !== null ? autolinker.link(String(feature.properties['N_Pista']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -974,11 +974,11 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Identificação </th>\
-                        <td class="visible-with-data" id="Ident">' + (feature.properties['Ident'] !== null ? autolinker.link(feature.properties['Ident'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Ident">' + (feature.properties['Ident'] !== null ? autolinker.link(String(feature.properties['Ident']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Número de Pistas de Rolamento </th>\
-                        <td class="visible-with-data" id="N_Pistas">' + (feature.properties['N_Pistas'] !== null ? autolinker.link(feature.properties['N_Pistas'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="N_Pistas">' + (feature.properties['N_Pistas'] !== null ? autolinker.link(String(feature.properties['N_Pistas']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1030,15 +1030,15 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Jurisdição </th>\
-                        <td class="visible-with-data" id="Jurisdicao">' + (feature.properties['Jurisdicao'] !== null ? autolinker.link(feature.properties['Jurisdicao'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Jurisdicao">' + (feature.properties['Jurisdicao'] !== null ? autolinker.link(String(feature.properties['Jurisdicao']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Sigla</th>\
-                        <td class="visible-with-data" id="Sigla">' + (feature.properties['Sigla'] !== null ? autolinker.link(feature.properties['Sigla'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Sigla">' + (feature.properties['Sigla'] !== null ? autolinker.link(String(feature.properties['Sigla']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1090,19 +1090,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Exploração </th>\
-                        <td class="visible-with-data" id="T_explo">' + (feature.properties['T_explo'] !== null ? autolinker.link(feature.properties['T_explo'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="T_explo">' + (feature.properties['T_explo'] !== null ? autolinker.link(String(feature.properties['T_explo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Utilização Atual da Área </th>\
-                        <td class="visible-with-data" id="Util_área">' + (feature.properties['Util_área'] !== null ? autolinker.link(feature.properties['Util_área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Util_área">' + (feature.properties['Util_área'] !== null ? autolinker.link(String(feature.properties['Util_área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1156,19 +1156,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Exploração </th>\
-                        <td class="visible-with-data" id="T_explo">' + (feature.properties['T_explo'] !== null ? autolinker.link(feature.properties['T_explo'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="T_explo">' + (feature.properties['T_explo'] !== null ? autolinker.link(String(feature.properties['T_explo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Utilização Atual da Área </th>\
-                        <td class="visible-with-data" id="Util_área">' + (feature.properties['Util_área'] !== null ? autolinker.link(feature.properties['Util_área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Util_área">' + (feature.properties['Util_área'] !== null ? autolinker.link(String(feature.properties['Util_área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1222,19 +1222,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Exploração </th>\
-                        <td class="visible-with-data" id="T_explo">' + (feature.properties['T_explo'] !== null ? autolinker.link(feature.properties['T_explo'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="T_explo">' + (feature.properties['T_explo'] !== null ? autolinker.link(String(feature.properties['T_explo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Utilização Atual da Área </th>\
-                        <td class="visible-with-data" id="Util_área">' + (feature.properties['Util_área'] !== null ? autolinker.link(feature.properties['Util_área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Util_área">' + (feature.properties['Util_área'] !== null ? autolinker.link(String(feature.properties['Util_área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1288,31 +1288,31 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Tipo de Cessão </th>\
-                        <td class="visible-with-data" id="T_Cessao">' + (feature.properties['T_Cessao'] !== null ? autolinker.link(feature.properties['T_Cessao'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="T_Cessao">' + (feature.properties['T_Cessao'] !== null ? autolinker.link(String(feature.properties['T_Cessao']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data de Início do Contrato </th>\
-                        <td class="visible-with-data" id="D_Inicio">' + (feature.properties['D_Inicio'] !== null ? autolinker.link(feature.properties['D_Inicio'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="D_Inicio">' + (feature.properties['D_Inicio'] !== null ? autolinker.link(String(feature.properties['D_Inicio']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data de Término do Contrato </th>\
-                        <td class="visible-with-data" id="D_Term">' + (feature.properties['D_Term'] !== null ? autolinker.link(feature.properties['D_Term'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="D_Term">' + (feature.properties['D_Term'] !== null ? autolinker.link(String(feature.properties['D_Term']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Atividade Desenvolvida </th>\
-                        <td class="visible-with-data" id="A_Desenv">' + (feature.properties['A_Desenv'] !== null ? autolinker.link(feature.properties['A_Desenv'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="A_Desenv">' + (feature.properties['A_Desenv'] !== null ? autolinker.link(String(feature.properties['A_Desenv']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Responsável </th>\
-                        <td class="visible-with-data" id="Respons">' + (feature.properties['Respons'] !== null ? autolinker.link(feature.properties['Respons'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Respons">' + (feature.properties['Respons'] !== null ? autolinker.link(String(feature.properties['Respons']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1366,31 +1366,31 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Tipo de Cessão </th>\
-                        <td class="visible-with-data" id="T_Cessao">' + (feature.properties['T_Cessao'] !== null ? autolinker.link(feature.properties['T_Cessao'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="T_Cessao">' + (feature.properties['T_Cessao'] !== null ? autolinker.link(String(feature.properties['T_Cessao']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data de Início do Contrato </th>\
-                        <td class="visible-with-data" id="D_Inicio">' + (feature.properties['D_Inicio'] !== null ? autolinker.link(feature.properties['D_Inicio'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="D_Inicio">' + (feature.properties['D_Inicio'] !== null ? autolinker.link(String(feature.properties['D_Inicio']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data de Término do Contrato </th>\
-                        <td class="visible-with-data" id="D_Term">' + (feature.properties['D_Term'] !== null ? autolinker.link(feature.properties['D_Term'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="D_Term">' + (feature.properties['D_Term'] !== null ? autolinker.link(String(feature.properties['D_Term']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Atividade Desenvolvida </th>\
-                        <td class="visible-with-data" id="A_Desenv">' + (feature.properties['A_Desenv'] !== null ? autolinker.link(feature.properties['A_Desenv'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="A_Desenv">' + (feature.properties['A_Desenv'] !== null ? autolinker.link(String(feature.properties['A_Desenv']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Responsável </th>\
-                        <td class="visible-with-data" id="Respons">' + (feature.properties['Respons'] !== null ? autolinker.link(feature.properties['Respons'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Respons">' + (feature.properties['Respons'] !== null ? autolinker.link(String(feature.properties['Respons']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1444,31 +1444,31 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Tipo de Cessão </th>\
-                        <td class="visible-with-data" id="T_Cessao">' + (feature.properties['T_Cessao'] !== null ? autolinker.link(feature.properties['T_Cessao'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="T_Cessao">' + (feature.properties['T_Cessao'] !== null ? autolinker.link(String(feature.properties['T_Cessao']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data de Início do Contrato </th>\
-                        <td class="visible-with-data" id="D_Inicio">' + (feature.properties['D_Inicio'] !== null ? autolinker.link(feature.properties['D_Inicio'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="D_Inicio">' + (feature.properties['D_Inicio'] !== null ? autolinker.link(String(feature.properties['D_Inicio']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data de Término do Contrato </th>\
-                        <td class="visible-with-data" id="D_Term">' + (feature.properties['D_Term'] !== null ? autolinker.link(feature.properties['D_Term'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="D_Term">' + (feature.properties['D_Term'] !== null ? autolinker.link(String(feature.properties['D_Term']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Atividade Desenvolvida </th>\
-                        <td class="visible-with-data" id="A_Desenv">' + (feature.properties['A_Desenv'] !== null ? autolinker.link(feature.properties['A_Desenv'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="A_Desenv">' + (feature.properties['A_Desenv'] !== null ? autolinker.link(String(feature.properties['A_Desenv']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Responsável </th>\
-                        <td class="visible-with-data" id="Respons">' + (feature.properties['Respons'] !== null ? autolinker.link(feature.properties['Respons'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Respons">' + (feature.properties['Respons'] !== null ? autolinker.link(String(feature.properties['Respons']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1522,31 +1522,31 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Tipo de Cessão </th>\
-                        <td class="visible-with-data" id="T_Cessao">' + (feature.properties['T_Cessao'] !== null ? autolinker.link(feature.properties['T_Cessao'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="T_Cessao">' + (feature.properties['T_Cessao'] !== null ? autolinker.link(String(feature.properties['T_Cessao']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data de Início do Contrato </th>\
-                        <td class="visible-with-data" id="D_Inicio">' + (feature.properties['D_Inicio'] !== null ? autolinker.link(feature.properties['D_Inicio'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="D_Inicio">' + (feature.properties['D_Inicio'] !== null ? autolinker.link(String(feature.properties['D_Inicio']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data de Término do Contrato </th>\
-                        <td class="visible-with-data" id="D_Term">' + (feature.properties['D_Term'] !== null ? autolinker.link(feature.properties['D_Term'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="D_Term">' + (feature.properties['D_Term'] !== null ? autolinker.link(String(feature.properties['D_Term']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Atividade Desenvolvida </th>\
-                        <td class="visible-with-data" id="A_Desenv">' + (feature.properties['A_Desenv'] !== null ? autolinker.link(feature.properties['A_Desenv'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="A_Desenv">' + (feature.properties['A_Desenv'] !== null ? autolinker.link(String(feature.properties['A_Desenv']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Responsável </th>\
-                        <td class="visible-with-data" id="Respons">' + (feature.properties['Respons'] !== null ? autolinker.link(feature.properties['Respons'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Respons">' + (feature.properties['Respons'] !== null ? autolinker.link(String(feature.properties['Respons']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1600,15 +1600,15 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Destinação </th>\
-                        <td class="visible-with-data" id="Destinacao">' + (feature.properties['Destinacao'] !== null ? autolinker.link(feature.properties['Destinacao'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Destinacao">' + (feature.properties['Destinacao'] !== null ? autolinker.link(String(feature.properties['Destinacao']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1662,15 +1662,15 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Destinação </th>\
-                        <td class="visible-with-data" id="Destinacao">' + (feature.properties['Destinacao'] !== null ? autolinker.link(feature.properties['Destinacao'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Destinacao">' + (feature.properties['Destinacao'] !== null ? autolinker.link(String(feature.properties['Destinacao']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1724,15 +1724,15 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Destinação </th>\
-                        <td class="visible-with-data" id="Destinacao">' + (feature.properties['Destinacao'] !== null ? autolinker.link(feature.properties['Destinacao'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Destinacao">' + (feature.properties['Destinacao'] !== null ? autolinker.link(String(feature.properties['Destinacao']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1786,15 +1786,15 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Destinação </th>\
-                        <td class="visible-with-data" id="Destinacao">' + (feature.properties['Destinacao'] !== null ? autolinker.link(feature.properties['Destinacao'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Destinacao">' + (feature.properties['Destinacao'] !== null ? autolinker.link(String(feature.properties['Destinacao']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1848,11 +1848,11 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Name">' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Name">' + (feature.properties['Name'] !== null ? autolinker.link(String(feature.properties['Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Instrumento Legal </th>\
-                        <td class="visible-with-data" id="Inst_Legal">' + (feature.properties['Inst_Legal'] !== null ? autolinker.link(feature.properties['Inst_Legal'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Inst_Legal">' + (feature.properties['Inst_Legal'] !== null ? autolinker.link(String(feature.properties['Inst_Legal']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1906,31 +1906,31 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Identificador do Cais </th>\
-                        <td class="visible-with-data" id="Id_Cais">' + (feature.properties['Id_Cais'] !== null ? autolinker.link(feature.properties['Id_Cais'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Id_Cais">' + (feature.properties['Id_Cais'] !== null ? autolinker.link(String(feature.properties['Id_Cais']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Identificador do Berço </th>\
-                        <td class="visible-with-data" id="Id_Berco">' + (feature.properties['Id_Berco'] !== null ? autolinker.link(feature.properties['Id_Berco'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Id_Berco">' + (feature.properties['Id_Berco'] !== null ? autolinker.link(String(feature.properties['Id_Berco']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Características Construtivas </th>\
-                        <td class="visible-with-data" id="C_Const">' + (feature.properties['C_Const'] !== null ? autolinker.link(feature.properties['C_Const'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="C_Const">' + (feature.properties['C_Const'] !== null ? autolinker.link(String(feature.properties['C_Const']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Comprimento (m) </th>\
-                        <td class="visible-with-data" id="Comp">' + (feature.properties['Comp'] !== null ? autolinker.link(feature.properties['Comp'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Comp">' + (feature.properties['Comp'] !== null ? autolinker.link(String(feature.properties['Comp']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Profundidade (m) </th>\
-                        <td class="visible-with-data" id="Profund">' + (feature.properties['Profund'] !== null ? autolinker.link(feature.properties['Profund'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Profund">' + (feature.properties['Profund'] !== null ? autolinker.link(String(feature.properties['Profund']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Calado (m) </th>\
-                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(feature.properties['Calado'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(String(feature.properties['Calado']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="P_Carga">' + (feature.properties['P_Carga'] !== null ? autolinker.link(feature.properties['P_Carga'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="P_Carga">' + (feature.properties['P_Carga'] !== null ? autolinker.link(String(feature.properties['P_Carga']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1984,31 +1984,31 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Identificador do Cais </th>\
-                        <td class="visible-with-data" id="Id_Cais">' + (feature.properties['Id_Cais'] !== null ? autolinker.link(feature.properties['Id_Cais'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Id_Cais">' + (feature.properties['Id_Cais'] !== null ? autolinker.link(String(feature.properties['Id_Cais']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Identificador do Berço </th>\
-                        <td class="visible-with-data" id="Id_Berco">' + (feature.properties['Id_Berco'] !== null ? autolinker.link(feature.properties['Id_Berco'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Id_Berco">' + (feature.properties['Id_Berco'] !== null ? autolinker.link(String(feature.properties['Id_Berco']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Características Construtivas </th>\
-                        <td class="visible-with-data" id="C_Const">' + (feature.properties['C_Const'] !== null ? autolinker.link(feature.properties['C_Const'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="C_Const">' + (feature.properties['C_Const'] !== null ? autolinker.link(String(feature.properties['C_Const']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Comprimento (m) </th>\
-                        <td class="visible-with-data" id="Comp">' + (feature.properties['Comp'] !== null ? autolinker.link(feature.properties['Comp'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Comp">' + (feature.properties['Comp'] !== null ? autolinker.link(String(feature.properties['Comp']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Profundidade (m) </th>\
-                        <td class="visible-with-data" id="Profund">' + (feature.properties['Profund'] !== null ? autolinker.link(feature.properties['Profund'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Profund">' + (feature.properties['Profund'] !== null ? autolinker.link(String(feature.properties['Profund']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Calado (m) </th>\
-                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(feature.properties['Calado'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(String(feature.properties['Calado']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="P_Carga">' + (feature.properties['P_Carga'] !== null ? autolinker.link(feature.properties['P_Carga'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="P_Carga">' + (feature.properties['P_Carga'] !== null ? autolinker.link(String(feature.properties['P_Carga']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -2062,31 +2062,31 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Identificador do Cais </th>\
-                        <td class="visible-with-data" id="Id_Cais">' + (feature.properties['Id_Cais'] !== null ? autolinker.link(feature.properties['Id_Cais'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Id_Cais">' + (feature.properties['Id_Cais'] !== null ? autolinker.link(String(feature.properties['Id_Cais']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Identificador do Berço </th>\
-                        <td class="visible-with-data" id="Id_Berco">' + (feature.properties['Id_Berco'] !== null ? autolinker.link(feature.properties['Id_Berco'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Id_Berco">' + (feature.properties['Id_Berco'] !== null ? autolinker.link(String(feature.properties['Id_Berco']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Características Construtivas </th>\
-                        <td class="visible-with-data" id="C_Const">' + (feature.properties['C_Const'] !== null ? autolinker.link(feature.properties['C_Const'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="C_Const">' + (feature.properties['C_Const'] !== null ? autolinker.link(String(feature.properties['C_Const']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Comprimento (m) </th>\
-                        <td class="visible-with-data" id="Comp">' + (feature.properties['Comp'] !== null ? autolinker.link(feature.properties['Comp'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Comp">' + (feature.properties['Comp'] !== null ? autolinker.link(String(feature.properties['Comp']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Profundidade (m) </th>\
-                        <td class="visible-with-data" id="Profund">' + (feature.properties['Profund'] !== null ? autolinker.link(feature.properties['Profund'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Profund">' + (feature.properties['Profund'] !== null ? autolinker.link(String(feature.properties['Profund']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Calado (m) </th>\
-                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(feature.properties['Calado'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(String(feature.properties['Calado']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="P_Carga">' + (feature.properties['P_Carga'] !== null ? autolinker.link(feature.properties['P_Carga'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="P_Carga">' + (feature.properties['P_Carga'] !== null ? autolinker.link(String(feature.properties['P_Carga']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -2140,31 +2140,31 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Identificador do Cais </th>\
-                        <td class="visible-with-data" id="Id_Cais">' + (feature.properties['Id_Cais'] !== null ? autolinker.link(feature.properties['Id_Cais'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Id_Cais">' + (feature.properties['Id_Cais'] !== null ? autolinker.link(String(feature.properties['Id_Cais']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Identificador do Berço </th>\
-                        <td class="visible-with-data" id="Id_Berco">' + (feature.properties['Id_Berco'] !== null ? autolinker.link(feature.properties['Id_Berco'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Id_Berco">' + (feature.properties['Id_Berco'] !== null ? autolinker.link(String(feature.properties['Id_Berco']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Características Construtivas </th>\
-                        <td class="visible-with-data" id="C_Const">' + (feature.properties['C_Const'] !== null ? autolinker.link(feature.properties['C_Const'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="C_Const">' + (feature.properties['C_Const'] !== null ? autolinker.link(String(feature.properties['C_Const']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Comprimento (m) </th>\
-                        <td class="visible-with-data" id="Comp">' + (feature.properties['Comp'] !== null ? autolinker.link(feature.properties['Comp'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Comp">' + (feature.properties['Comp'] !== null ? autolinker.link(String(feature.properties['Comp']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Profundidade (m) </th>\
-                        <td class="visible-with-data" id="Profund">' + (feature.properties['Profund'] !== null ? autolinker.link(feature.properties['Profund'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Profund">' + (feature.properties['Profund'] !== null ? autolinker.link(String(feature.properties['Profund']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Calado (m) </th>\
-                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(feature.properties['Calado'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Calado">' + (feature.properties['Calado'] !== null ? autolinker.link(String(feature.properties['Calado']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="P_Carga">' + (feature.properties['P_Carga'] !== null ? autolinker.link(feature.properties['P_Carga'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="P_Carga">' + (feature.properties['P_Carga'] !== null ? autolinker.link(String(feature.properties['P_Carga']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -2218,19 +2218,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Tipo da Instalação </th>\
-                        <td class="visible-with-data" id="T_instal">' + (feature.properties['T_instal'] !== null ? autolinker.link(feature.properties['T_instal'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="T_instal">' + (feature.properties['T_instal'] !== null ? autolinker.link(String(feature.properties['T_instal']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Volume (m³) </th>\
-                        <td class="visible-with-data" id="Volume">' + (feature.properties['Volume'] !== null ? autolinker.link(feature.properties['Volume'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Volume">' + (feature.properties['Volume'] !== null ? autolinker.link(String(feature.properties['Volume']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Capacidade</th>\
-                        <td class="visible-with-data" id="Capacidade">' + (feature.properties['Capacidade'] !== null ? autolinker.link(feature.properties['Capacidade'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Capacidade">' + (feature.properties['Capacidade'] !== null ? autolinker.link(String(feature.properties['Capacidade']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -2284,19 +2284,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Tipo da Instalação </th>\
-                        <td class="visible-with-data" id="T_instal">' + (feature.properties['T_instal'] !== null ? autolinker.link(feature.properties['T_instal'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="T_instal">' + (feature.properties['T_instal'] !== null ? autolinker.link(String(feature.properties['T_instal']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Volume (m³) </th>\
-                        <td class="visible-with-data" id="Volume">' + (feature.properties['Volume'] !== null ? autolinker.link(feature.properties['Volume'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Volume">' + (feature.properties['Volume'] !== null ? autolinker.link(String(feature.properties['Volume']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Capacidade</th>\
-                        <td class="visible-with-data" id="Capacidade">' + (feature.properties['Capacidade'] !== null ? autolinker.link(feature.properties['Capacidade'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Capacidade">' + (feature.properties['Capacidade'] !== null ? autolinker.link(String(feature.properties['Capacidade']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -2350,19 +2350,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Tipo da Instalação </th>\
-                        <td class="visible-with-data" id="T_instal">' + (feature.properties['T_instal'] !== null ? autolinker.link(feature.properties['T_instal'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="T_instal">' + (feature.properties['T_instal'] !== null ? autolinker.link(String(feature.properties['T_instal']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Volume (m³) </th>\
-                        <td class="visible-with-data" id="Volume">' + (feature.properties['Volume'] !== null ? autolinker.link(feature.properties['Volume'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Volume">' + (feature.properties['Volume'] !== null ? autolinker.link(String(feature.properties['Volume']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Capacidade</th>\
-                        <td class="visible-with-data" id="Capacidade">' + (feature.properties['Capacidade'] !== null ? autolinker.link(feature.properties['Capacidade'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Capacidade">' + (feature.properties['Capacidade'] !== null ? autolinker.link(String(feature.properties['Capacidade']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -2416,19 +2416,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Tipo da Instalação </th>\
-                        <td class="visible-with-data" id="T_instal">' + (feature.properties['T_instal'] !== null ? autolinker.link(feature.properties['T_instal'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="T_instal">' + (feature.properties['T_instal'] !== null ? autolinker.link(String(feature.properties['T_instal']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Volume (m³) </th>\
-                        <td class="visible-with-data" id="Volume">' + (feature.properties['Volume'] !== null ? autolinker.link(feature.properties['Volume'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Volume">' + (feature.properties['Volume'] !== null ? autolinker.link(String(feature.properties['Volume']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Capacidade</th>\
-                        <td class="visible-with-data" id="Capacidade">' + (feature.properties['Capacidade'] !== null ? autolinker.link(feature.properties['Capacidade'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Capacidade">' + (feature.properties['Capacidade'] !== null ? autolinker.link(String(feature.properties['Capacidade']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -2482,15 +2482,15 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(feature.properties['Perfil'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(String(feature.properties['Perfil']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -2544,15 +2544,15 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(feature.properties['Perfil'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(String(feature.properties['Perfil']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -2606,15 +2606,15 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(feature.properties['Perfil'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(String(feature.properties['Perfil']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -2668,15 +2668,15 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Area">' + (feature.properties['Area'] !== null ? autolinker.link(feature.properties['Area'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Area">' + (feature.properties['Area'] !== null ? autolinker.link(String(feature.properties['Area']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(feature.properties['Perfil'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(String(feature.properties['Perfil']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -2730,31 +2730,31 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Arrendatário </th>\
-                        <td class="visible-with-data" id="Arrend">' + (feature.properties['Arrend'] !== null ? autolinker.link(feature.properties['Arrend'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Arrend">' + (feature.properties['Arrend'] !== null ? autolinker.link(String(feature.properties['Arrend']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Número do Contrato </th>\
-                        <td class="visible-with-data" id="N_Cont">' + (feature.properties['N_Cont'] !== null ? autolinker.link(feature.properties['N_Cont'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="N_Cont">' + (feature.properties['N_Cont'] !== null ? autolinker.link(String(feature.properties['N_Cont']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data Início do Contrato </th>\
-                        <td class="visible-with-data" id="D_Inicio">' + (feature.properties['D_Inicio'] !== null ? autolinker.link(feature.properties['D_Inicio'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="D_Inicio">' + (feature.properties['D_Inicio'] !== null ? autolinker.link(String(feature.properties['D_Inicio']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data do Término do Contrato </th>\
-                        <td class="visible-with-data" id="D_Term">' + (feature.properties['D_Term'] !== null ? autolinker.link(feature.properties['D_Term'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="D_Term">' + (feature.properties['D_Term'] !== null ? autolinker.link(String(feature.properties['D_Term']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Possibilidade de Prorrogação </th>\
-                        <td class="visible-with-data" id="P_Prorrog">' + (feature.properties['P_Prorrog'] !== null ? autolinker.link(feature.properties['P_Prorrog'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="P_Prorrog">' + (feature.properties['P_Prorrog'] !== null ? autolinker.link(String(feature.properties['P_Prorrog']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(feature.properties['Perfil'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(String(feature.properties['Perfil']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -2808,31 +2808,31 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Arrendatário </th>\
-                        <td class="visible-with-data" id="Arrend">' + (feature.properties['Arrend'] !== null ? autolinker.link(feature.properties['Arrend'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Arrend">' + (feature.properties['Arrend'] !== null ? autolinker.link(String(feature.properties['Arrend']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Número do Contrato </th>\
-                        <td class="visible-with-data" id="N_Cont">' + (feature.properties['N_Cont'] !== null ? autolinker.link(feature.properties['N_Cont'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="N_Cont">' + (feature.properties['N_Cont'] !== null ? autolinker.link(String(feature.properties['N_Cont']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data Início do Contrato </th>\
-                        <td class="visible-with-data" id="D_Inicio">' + (feature.properties['D_Inicio'] !== null ? autolinker.link(feature.properties['D_Inicio'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="D_Inicio">' + (feature.properties['D_Inicio'] !== null ? autolinker.link(String(feature.properties['D_Inicio']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data do Término do Contrato </th>\
-                        <td class="visible-with-data" id="D_Term">' + (feature.properties['D_Term'] !== null ? autolinker.link(feature.properties['D_Term'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="D_Term">' + (feature.properties['D_Term'] !== null ? autolinker.link(String(feature.properties['D_Term']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Possibilidade de Prorrogação </th>\
-                        <td class="visible-with-data" id="P_Prorrog">' + (feature.properties['P_Prorrog'] !== null ? autolinker.link(feature.properties['P_Prorrog'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="P_Prorrog">' + (feature.properties['P_Prorrog'] !== null ? autolinker.link(String(feature.properties['P_Prorrog']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(feature.properties['Perfil'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(String(feature.properties['Perfil']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -2886,31 +2886,31 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Arrendatário </th>\
-                        <td class="visible-with-data" id="Arrend">' + (feature.properties['Arrend'] !== null ? autolinker.link(feature.properties['Arrend'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Arrend">' + (feature.properties['Arrend'] !== null ? autolinker.link(String(feature.properties['Arrend']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Número do Contrato </th>\
-                        <td class="visible-with-data" id="N_Cont">' + (feature.properties['N_Cont'] !== null ? autolinker.link(feature.properties['N_Cont'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="N_Cont">' + (feature.properties['N_Cont'] !== null ? autolinker.link(String(feature.properties['N_Cont']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data Início do Contrato </th>\
-                        <td class="visible-with-data" id="D_Inicio">' + (feature.properties['D_Inicio'] !== null ? autolinker.link(feature.properties['D_Inicio'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="D_Inicio">' + (feature.properties['D_Inicio'] !== null ? autolinker.link(String(feature.properties['D_Inicio']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data do Término do Contrato </th>\
-                        <td class="visible-with-data" id="D_Term">' + (feature.properties['D_Term'] !== null ? autolinker.link(feature.properties['D_Term'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="D_Term">' + (feature.properties['D_Term'] !== null ? autolinker.link(String(feature.properties['D_Term']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Possibilidade de Prorrogação </th>\
-                        <td class="visible-with-data" id="P_Prorrog">' + (feature.properties['P_Prorrog'] !== null ? autolinker.link(feature.properties['P_Prorrog'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="P_Prorrog">' + (feature.properties['P_Prorrog'] !== null ? autolinker.link(String(feature.properties['P_Prorrog']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(feature.properties['Perfil'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(String(feature.properties['Perfil']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -2964,31 +2964,31 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Arrendatário </th>\
-                        <td class="visible-with-data" id="Arrend">' + (feature.properties['Arrend'] !== null ? autolinker.link(feature.properties['Arrend'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Arrend">' + (feature.properties['Arrend'] !== null ? autolinker.link(String(feature.properties['Arrend']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Número do Contrato </th>\
-                        <td class="visible-with-data" id="N_Cont">' + (feature.properties['N_Cont'] !== null ? autolinker.link(feature.properties['N_Cont'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="N_Cont">' + (feature.properties['N_Cont'] !== null ? autolinker.link(String(feature.properties['N_Cont']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data Início do Contrato </th>\
-                        <td class="visible-with-data" id="D_Inicio">' + (feature.properties['D_Inicio'] !== null ? autolinker.link(feature.properties['D_Inicio'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="D_Inicio">' + (feature.properties['D_Inicio'] !== null ? autolinker.link(String(feature.properties['D_Inicio']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data do Término do Contrato </th>\
-                        <td class="visible-with-data" id="D_Term">' + (feature.properties['D_Term'] !== null ? autolinker.link(feature.properties['D_Term'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="D_Term">' + (feature.properties['D_Term'] !== null ? autolinker.link(String(feature.properties['D_Term']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Possibilidade de Prorrogação </th>\
-                        <td class="visible-with-data" id="P_Prorrog">' + (feature.properties['P_Prorrog'] !== null ? autolinker.link(feature.properties['P_Prorrog'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="P_Prorrog">' + (feature.properties['P_Prorrog'] !== null ? autolinker.link(String(feature.properties['P_Prorrog']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(feature.properties['Perfil'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(String(feature.properties['Perfil']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -3042,19 +3042,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -3108,19 +3108,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -3174,19 +3174,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -3240,19 +3240,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -3306,19 +3306,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -3372,19 +3372,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -3438,19 +3438,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -3504,19 +3504,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -3570,19 +3570,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -3636,19 +3636,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -3702,19 +3702,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -3768,19 +3768,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -3834,19 +3834,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -3900,19 +3900,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -3966,19 +3966,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -4032,19 +4032,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -4098,19 +4098,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -4164,19 +4164,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -4230,19 +4230,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -4296,19 +4296,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -4362,19 +4362,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -4428,19 +4428,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(feature.properties['Área (m²'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área (m²">' + (feature.properties['Área (m²'] !== null ? autolinker.link(String(feature.properties['Área (m²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(feature.properties['Perfil de'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil de">' + (feature.properties['Perfil de'] !== null ? autolinker.link(String(feature.properties['Perfil de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(feature.properties['Tipo de In'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Tipo de In">' + (feature.properties['Tipo de In'] !== null ? autolinker.link(String(feature.properties['Tipo de In']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -4494,19 +4494,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(feature.properties['Perfil'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(String(feature.properties['Perfil']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação</th>\
-                        <td class="visible-with-data" id="T_instal">' + (feature.properties['T_instal'] !== null ? autolinker.link(feature.properties['T_instal'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="T_instal">' + (feature.properties['T_instal'] !== null ? autolinker.link(String(feature.properties['T_instal']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -4560,19 +4560,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(feature.properties['Perfil'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(String(feature.properties['Perfil']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação</th>\
-                        <td class="visible-with-data" id="T_instal">' + (feature.properties['T_instal'] !== null ? autolinker.link(feature.properties['T_instal'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="T_instal">' + (feature.properties['T_instal'] !== null ? autolinker.link(String(feature.properties['T_instal']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -4626,19 +4626,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(feature.properties['Perfil'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(String(feature.properties['Perfil']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação</th>\
-                        <td class="visible-with-data" id="T_instal">' + (feature.properties['T_instal'] !== null ? autolinker.link(feature.properties['T_instal'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="T_instal">' + (feature.properties['T_instal'] !== null ? autolinker.link(String(feature.properties['T_instal']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -4692,19 +4692,19 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área (m²) </th>\
-                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(feature.properties['Área'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Área">' + (feature.properties['Área'] !== null ? autolinker.link(String(feature.properties['Área']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perfil de Carga </th>\
-                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(feature.properties['Perfil'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Perfil">' + (feature.properties['Perfil'] !== null ? autolinker.link(String(feature.properties['Perfil']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Tipo de Instalação </th>\
-                        <td class="visible-with-data" id="T_Instal">' + (feature.properties['T_Instal'] !== null ? autolinker.link(feature.properties['T_Instal'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="T_Instal">' + (feature.properties['T_Instal'] !== null ? autolinker.link(String(feature.properties['T_Instal']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -4758,11 +4758,11 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Instrumento Legal </th>\
-                        <td class="visible-with-data" id="Ins_Legal">' + (feature.properties['Ins_Legal'] !== null ? autolinker.link(feature.properties['Ins_Legal'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Ins_Legal">' + (feature.properties['Ins_Legal'] !== null ? autolinker.link(String(feature.properties['Ins_Legal']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Anexo</th>\
-                        <td class="visible-with-data" id="Anexo">' + (feature.properties['Anexo'] !== null ? autolinker.link(feature.properties['Anexo'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Anexo">' + (feature.properties['Anexo'] !== null ? autolinker.link(String(feature.properties['Anexo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -4800,103 +4800,94 @@
             style: style_PoligonaldareadoPortoOrganizadodeViladoConde_70_0,
         });
         bounds_group.addLayer(layer_PoligonaldareadoPortoOrganizadodeViladoConde_70);
-        var osmGeocoder = new L.Control.Geocoder({
-            collapsed: true,
-            position: 'topleft',
-            text: 'Search',
-            title: 'Testing'
-        }).addTo(map);
-        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
-        .className += ' fa fa-search';
-        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
-        .title += 'Search for a place';
+        map.addLayer(layer_PoligonaldareadoPortoOrganizadodeViladoConde_70);
         var overlaysTree = [
-        {label: '<b>Poligonal da Área do Porto Organizado </b>', selectAllCheckbox: true, children: [
+        {label: '<b>Poligonal da Área do Porto Organizado </b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/PoligonaldareadoPortoOrganizadodeViladoConde_70.png" /> Poligonal da Área do Porto Organizado de Vila do Conde', layer: layer_PoligonaldareadoPortoOrganizadodeViladoConde_70},]},
-        {label: '<b>Áreas Afetas às Operações Portuárias </b>', selectAllCheckbox: true, children: [
+        {label: '<b>Áreas Afetas às Operações Portuárias </b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/reasAfetassOperaesPorturiasSituaoAtual_69.png" /> Áreas Afetas às Operações Portuárias - Situação Atual ', layer: layer_reasAfetassOperaesPorturiasSituaoAtual_69},
             {label: '<img src="legend/reasAfetassOperaesPorturiasCurtoPrazo_68.png" /> Áreas Afetas às Operações Portuárias - Curto Prazo ', layer: layer_reasAfetassOperaesPorturiasCurtoPrazo_68},
             {label: '<img src="legend/reasAfetassOperaesPorturiasMdioPrazo_67.png" /> Áreas Afetas às Operações Portuárias - Médio Prazo ', layer: layer_reasAfetassOperaesPorturiasMdioPrazo_67},
             {label: '<img src="legend/reasAfetassOperaesPorturiasLongoPrazo_66.png" /> Áreas Afetas às Operações Portuárias - Longo Prazo ', layer: layer_reasAfetassOperaesPorturiasLongoPrazo_66},]},
-        {label: '<b>Áreas Afetas às Operações Portuárias por Perfil de Carga - Situação Atual </b>', selectAllCheckbox: true, children: [
+        {label: '<b>Áreas Afetas às Operações Portuárias por Perfil de Carga - Situação Atual </b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/MltiploUso_65.png" /> Múltiplo Uso', layer: layer_MltiploUso_65},
             {label: '<img src="legend/CargaConteinerizada_64.png" /> Carga Conteinerizada', layer: layer_CargaConteinerizada_64},
             {label: '<img src="legend/GranelLquido_63.png" /> Granel Líquido', layer: layer_GranelLquido_63},
             {label: '<img src="legend/GranelSlidoLquido_62.png" /> Granel Sólido/Líquido', layer: layer_GranelSlidoLquido_62},
             {label: '<img src="legend/GranelLquidoGasoso_61.png" /> Granel Líquido/Gasoso', layer: layer_GranelLquidoGasoso_61},]},
-        {label: '<b>Áreas Afetas às Operações Portuárias por Perfil de Carga - Curto Prazo</b>', selectAllCheckbox: true, children: [
+        {label: '<b>Áreas Afetas às Operações Portuárias por Perfil de Carga - Curto Prazo</b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/MltipoUso_60.png" /> Múltipo Uso', layer: layer_MltipoUso_60},
             {label: '<img src="legend/GranelLquido_59.png" /> Granel Líquido', layer: layer_GranelLquido_59},
             {label: '<img src="legend/GranelSlido_58.png" /> Granel Sólido', layer: layer_GranelSlido_58},
             {label: '<img src="legend/GranelSlidoLquido_57.png" /> Granel Sólido/Líquido', layer: layer_GranelSlidoLquido_57},
             {label: '<img src="legend/GranelLquidoGasoso_56.png" /> Granel Líquido/Gasoso', layer: layer_GranelLquidoGasoso_56},]},
-        {label: '<b>Áreas Afetas às Operações Portuárias por Perfil de Carga - Médio Prazo</b>', selectAllCheckbox: true, children: [
+        {label: '<b>Áreas Afetas às Operações Portuárias por Perfil de Carga - Médio Prazo</b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/MltiploUso_55.png" /> Múltiplo Uso', layer: layer_MltiploUso_55},
             {label: '<img src="legend/CargaConteinerizada_54.png" /> Carga Conteinerizada', layer: layer_CargaConteinerizada_54},
             {label: '<img src="legend/GranelLquido_53.png" /> Granel Líquido', layer: layer_GranelLquido_53},
             {label: '<img src="legend/GranelSlido_52.png" /> Granel Sólido', layer: layer_GranelSlido_52},
             {label: '<img src="legend/GranelSlidoLquido_51.png" /> Granel Sólido/Líquido', layer: layer_GranelSlidoLquido_51},
             {label: '<img src="legend/GranelLquidoGasoso_50.png" /> Granel Líquido/Gasoso', layer: layer_GranelLquidoGasoso_50},]},
-        {label: '<b>Áreas Afetas às Operações Portuárias por Perfil de Carga - Longo Prazo</b>', selectAllCheckbox: true, children: [
+        {label: '<b>Áreas Afetas às Operações Portuárias por Perfil de Carga - Longo Prazo</b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/MltiploUso_49.png" /> Múltiplo Uso', layer: layer_MltiploUso_49},
             {label: '<img src="legend/CargaConteinerizada_48.png" /> Carga Conteinerizada', layer: layer_CargaConteinerizada_48},
             {label: '<img src="legend/GranelLquido_47.png" /> Granel Líquido ', layer: layer_GranelLquido_47},
             {label: '<img src="legend/GranelSlido_46.png" /> Granel Sólido', layer: layer_GranelSlido_46},
             {label: '<img src="legend/GranelSlidoLquido_45.png" /> Granel Sólido/Líquido', layer: layer_GranelSlidoLquido_45},
             {label: '<img src="legend/GranelLquidoGasoso_44.png" /> Granel Líquido/Gasoso', layer: layer_GranelLquidoGasoso_44},]},
-        {label: '<b>Áreas Afetas às Operações Portuárias Arrendadas </b>', selectAllCheckbox: true, children: [
+        {label: '<b>Áreas Afetas às Operações Portuárias Arrendadas </b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/reasAfetassOperaesPorturiasArrendadasSituaoAtual_43.png" /> Áreas Afetas às Operações Portuárias Arrendadas - Situação Atual', layer: layer_reasAfetassOperaesPorturiasArrendadasSituaoAtual_43},
             {label: '<img src="legend/reasAfetassOperaesPorturiasArrendadasCurtoPrazo_42.png" /> Áreas Afetas às Operações Portuárias Arrendadas - Curto Prazo ', layer: layer_reasAfetassOperaesPorturiasArrendadasCurtoPrazo_42},
             {label: '<img src="legend/reasAfetassOperaesPorturiasArrendadasMdioPrazo_41.png" /> Áreas Afetas às Operações Portuárias Arrendadas - Médio Prazo ', layer: layer_reasAfetassOperaesPorturiasArrendadasMdioPrazo_41},
             {label: '<img src="legend/reasAfetassOperaesPorturiasArrendadasLongoPrazo_40.png" /> Áreas Afetas às Operações Portuárias Arrendadas - Longo Prazo ', layer: layer_reasAfetassOperaesPorturiasArrendadasLongoPrazo_40},]},
-        {label: '<b>Áreas Afetas às Operações Portuárias Disponíveis para Arrendamento </b>', selectAllCheckbox: true, children: [
+        {label: '<b>Áreas Afetas às Operações Portuárias Disponíveis para Arrendamento </b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/reasAfetassOperaesPorturiasDisponveisparaArrendamentoSituaoAtual_39.png" /> Áreas Afetas às Operações Portuárias Disponíveis para Arrendamento - Situação Atual ', layer: layer_reasAfetassOperaesPorturiasDisponveisparaArrendamentoSituaoAtual_39},
             {label: '<img src="legend/reasAfetassOperaesPorturiasDisponveisparaArrendamentoCurtoPrazo_38.png" /> Áreas Afetas às Operações Portuárias Disponíveis para Arrendamento - Curto Prazo ', layer: layer_reasAfetassOperaesPorturiasDisponveisparaArrendamentoCurtoPrazo_38},
             {label: '<img src="legend/reasAfetassOperaesPorturiasDisponveisparaArrendamentoMdioPrazo_37.png" /> Áreas Afetas às Operações Portuárias Disponíveis para Arrendamento - Médio Prazo ', layer: layer_reasAfetassOperaesPorturiasDisponveisparaArrendamentoMdioPrazo_37},
             {label: '<img src="legend/reasAfetassOperaesPorturiasDisponveisparaArrendamentoLongoPrazo_36.png" /> Áreas Afetas às Operações Portuárias Disponíveis para Arrendamento - Longo Prazo ', layer: layer_reasAfetassOperaesPorturiasDisponveisparaArrendamentoLongoPrazo_36},]},
-        {label: '<b>Armazenagem </b>', selectAllCheckbox: true, children: [
+        {label: '<b>Armazenagem </b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/ArmazenagemSituaoAtual_35.png" /> Armazenagem - Situação Atual ', layer: layer_ArmazenagemSituaoAtual_35},
             {label: '<img src="legend/ArmazenagemCurtoPrazo_34.png" /> Armazenagem - Curto Prazo ', layer: layer_ArmazenagemCurtoPrazo_34},
             {label: '<img src="legend/ArmazenagemMdioPrazo_33.png" /> Armazenagem - Médio Prazo ', layer: layer_ArmazenagemMdioPrazo_33},
             {label: '<img src="legend/ArmazenagemLongoPrazo_32.png" /> Armazenagem - Longo Prazo ', layer: layer_ArmazenagemLongoPrazo_32},]},
-        {label: '<b>Acostagem </b>', selectAllCheckbox: true, children: [
+        {label: '<b>Acostagem </b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/AcostagemSituaoAtual_31.png" /> Acostagem - Situação Atual ', layer: layer_AcostagemSituaoAtual_31},
             {label: '<img src="legend/AcostagemCurtoPrazo_30.png" /> Acostagem - Curto Prazo ', layer: layer_AcostagemCurtoPrazo_30},
             {label: '<img src="legend/AcostagemMdioPrazo_29.png" /> Acostagem - Médio Prazo ', layer: layer_AcostagemMdioPrazo_29},
             {label: '<img src="legend/AcostagemLongoPrazo_28.png" /> Acostagem - Longo Prazo ', layer: layer_AcostagemLongoPrazo_28},]},
-        {label: '<b>Áreas e Instalações Alfandegadas </b>', selectAllCheckbox: true, children: [
+        {label: '<b>Áreas e Instalações Alfandegadas </b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/reaseInstalaesAlfandegadas_27.png" /> Áreas e Instalações Alfandegadas ', layer: layer_reaseInstalaesAlfandegadas_27},]},
-        {label: '<b>Áreas Não Afetas às Operações Portuárias </b>', selectAllCheckbox: true, children: [
+        {label: '<b>Áreas Não Afetas às Operações Portuárias </b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/reasNoAfetassOperaesPorturiasSituaoAtual_26.png" /> Áreas Não Afetas às Operações Portuárias - Situação Atual ', layer: layer_reasNoAfetassOperaesPorturiasSituaoAtual_26},
             {label: '<img src="legend/reasNoAfetassOperaesPorturiasCurtoPrazo_25.png" /> Áreas Não Afetas às Operações Portuárias - Curto Prazo ', layer: layer_reasNoAfetassOperaesPorturiasCurtoPrazo_25},
             {label: '<img src="legend/reasNoAfetassOperaesPorturiasMdioPrazo_24.png" /> Áreas Não Afetas às Operações Portuárias - Médio Prazo ', layer: layer_reasNoAfetassOperaesPorturiasMdioPrazo_24},
             {label: '<img src="legend/reasNoAfetassOperaesPorturiasLongoPrazo_23.png" /> Áreas Não Afetas às Operações Portuárias - Longo Prazo ', layer: layer_reasNoAfetassOperaesPorturiasLongoPrazo_23},]},
-        {label: '<b>Áreas Não Afetas às Operações Portuárias em Exploração Indireta </b>', selectAllCheckbox: true, children: [
+        {label: '<b>Áreas Não Afetas às Operações Portuárias em Exploração Indireta </b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/reasNoAfetassOperaesPorturiasemExploraoIndiretaSituaoAtual_22.png" /> Áreas Não Afetas às Operações Portuárias em Exploração Indireta - Situação Atual ', layer: layer_reasNoAfetassOperaesPorturiasemExploraoIndiretaSituaoAtual_22},
             {label: '<img src="legend/reasNoAfetassOperaesPorturiasemExploraoIndiretaCurtoPrazo_21.png" /> Áreas Não Afetas às Operações Portuárias em Exploração Indireta - Curto Prazo ', layer: layer_reasNoAfetassOperaesPorturiasemExploraoIndiretaCurtoPrazo_21},
             {label: '<img src="legend/reasNoAfetassOperaesPorturiasemExploraoIndiretaMdioPrazo_20.png" /> Áreas Não Afetas às Operações Portuárias em Exploração Indireta - Médio Prazo ', layer: layer_reasNoAfetassOperaesPorturiasemExploraoIndiretaMdioPrazo_20},
             {label: '<img src="legend/reasNoAfetassOperaesPorturiasemExploraoIndiretaLongoPrazo_19.png" /> Áreas Não Afetas às Operações Portuárias em Exploração Indireta - Longo Prazo ', layer: layer_reasNoAfetassOperaesPorturiasemExploraoIndiretaLongoPrazo_19},]},
-        {label: '<b>Áreas Não Afetas às Operações Portuárias Disponíveis para Exploração Indireta </b>', selectAllCheckbox: true, children: [
+        {label: '<b>Áreas Não Afetas às Operações Portuárias Disponíveis para Exploração Indireta </b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/reasNoAfetassOperaesPorturiasDisponveisparaExploraoIndiretaCurtoPrazo_18.png" /> Áreas Não Afetas às Operações Portuárias Disponíveis para Exploração Indireta - Curto Prazo ', layer: layer_reasNoAfetassOperaesPorturiasDisponveisparaExploraoIndiretaCurtoPrazo_18},
             {label: '<img src="legend/reasNoAfetassOperaesPorturiasDisponveisparaExploraoIndiretaMdioPrazo_17.png" /> Áreas Não Afetas às Operações Portuárias Disponíveis para Exploração Indireta - Médio Prazo ', layer: layer_reasNoAfetassOperaesPorturiasDisponveisparaExploraoIndiretaMdioPrazo_17},
             {label: '<img src="legend/reasNoAfetassOperaesPorturiasDisponveisparaExploraoIndiretaLongoPrazo_16.png" /> Áreas Não Afetas às Operações Portuárias Disponíveis para Exploração Indireta - Longo Prazo ', layer: layer_reasNoAfetassOperaesPorturiasDisponveisparaExploraoIndiretaLongoPrazo_16},]},
-        {label: '<b>Acessos Rodoviários Externos </b>', selectAllCheckbox: true, children: [
+        {label: '<b>Acessos Rodoviários Externos </b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/AcessosRodoviriosExternos_15.png" /> Acessos Rodoviários Externos ', layer: layer_AcessosRodoviriosExternos_15},]},
-        {label: '<b>Acessos Rodoviários Internos </b>', selectAllCheckbox: true, children: [
+        {label: '<b>Acessos Rodoviários Internos </b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/AcessosRodoviriosInternosSituaoAtual_14.png" /> Acessos Rodoviários Internos - Situação Atual ', layer: layer_AcessosRodoviriosInternosSituaoAtual_14},
             {label: '<img src="legend/AcessosRodoviriosInternosCurtoPrazo_13.png" /> Acessos Rodoviários Internos - Curto Prazo ', layer: layer_AcessosRodoviriosInternosCurtoPrazo_13},
             {label: '<img src="legend/AcessosRodoviriosInternosMdioPrazo_12.png" /> Acessos Rodoviários Internos - Médio Prazo ', layer: layer_AcessosRodoviriosInternosMdioPrazo_12},
             {label: '<img src="legend/AcessosRodoviriosInternosLongoPrazo_11.png" /> Acessos Rodoviários Internos - Longo Prazo ', layer: layer_AcessosRodoviriosInternosLongoPrazo_11},]},
-        {label: '<b>Acessos Ferroviários Internos</b>', selectAllCheckbox: true, children: [
+        {label: '<b>Acessos Ferroviários Internos</b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/AcessosFerroviriosInternosMdioPrazo_10.png" /> Acessos Ferroviários Internos - Médio Prazo ', layer: layer_AcessosFerroviriosInternosMdioPrazo_10},]},
-        {label: '<b>Acessos Hidroviários Externos </b>', selectAllCheckbox: true, children: [
+        {label: '<b>Acessos Hidroviários Externos </b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/AcessosHidroviriosExternos_9.png" /> Acessos Hidroviários Externos ', layer: layer_AcessosHidroviriosExternos_9},]},
-        {label: '<b>Canais de Acesso </b>', selectAllCheckbox: true, children: [
+        {label: '<b>Canais de Acesso </b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/CanaisdeAcessoSituaoAtual_8.png" /> Canais de Acesso - Situação Atual ', layer: layer_CanaisdeAcessoSituaoAtual_8},
             {label: '<img src="legend/CanaisdeAcessoCurtoPrazo_7.png" /> Canais de Acesso - Curto Prazo ', layer: layer_CanaisdeAcessoCurtoPrazo_7},
             {label: '<img src="legend/CanaisdeAcessoMdioPrazo_6.png" /> Canais de Acesso - Médio Prazo ', layer: layer_CanaisdeAcessoMdioPrazo_6},
             {label: '<img src="legend/CanaisdeAcessoLongoPrazo_5.png" /> Canais de Acesso - Longo Prazo ', layer: layer_CanaisdeAcessoLongoPrazo_5},]},
-        {label: '<b>Fundeadouros </b>', selectAllCheckbox: true, children: [
+        {label: '<b>Fundeadouros </b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/FundeadourosSituaoAtual_4.png" /> Fundeadouros - Situação Atual ', layer: layer_FundeadourosSituaoAtual_4},
             {label: '<img src="legend/FundeadourosCurtoPrazo_3.png" /> Fundeadouros - Curto Prazo ', layer: layer_FundeadourosCurtoPrazo_3},
             {label: '<img src="legend/FundeadourosMdioPrazo_2.png" /> Fundeadouros - Médio Prazo ', layer: layer_FundeadourosMdioPrazo_2},
